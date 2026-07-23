@@ -1718,3 +1718,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline: 2px solid var(--primary);
   outline-offset: 3px;
 }
+
+/* ===== Hero heading — white with glitter/shimmer sweep ===== */
+.heading-glitter{
+  position: relative;
+  background-image: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #ffffff 40%,
+    #ffffff 45%,
+    rgba(255,255,255,.55) 50%,
+    #ffffff 55%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(255,255,255,.35), 0 0 26px rgba(255,255,255,.18);
+  animation: headingGlitterSweep 3.2s ease-in-out infinite;
+}
+@keyframes headingGlitterSweep{
+  0%{ background-position: 200% 0; }
+  60%, 100%{ background-position: -60% 0; }
+}
+@media (prefers-reduced-motion: reduce){
+  .heading-glitter{ animation: none; -webkit-text-fill-color: #ffffff; text-shadow: none; }
+}
