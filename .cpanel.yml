@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bandhudh/claude.bandhudhanmisra.site/
+    - /bin/cp -R * $DEPLOYPATH
