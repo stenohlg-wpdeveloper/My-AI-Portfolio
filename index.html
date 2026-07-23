@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bandhudhan Misra — WordPress Developer & Elementor Pro Expert</title>
+<meta name="description" content="Bandhudhan Misra is a WordPress developer and Elementor Pro expert building fast, responsive WooCommerce stores, landing pages and business websites.">
+<meta name="keywords" content="WordPress Developer, Elementor Pro Expert, WooCommerce Developer, Landing Page Design, Website Speed Optimization">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Bandhudhan Misra — WordPress Developer">
+<meta property="og:description" content="WordPress Development, Elementor Pro & WooCommerce Expert. Fast, pixel-perfect, conversion-ready websites.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="bandhudhan-photo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bandhudhan Misra — WordPress Developer">
+<meta name="twitter:description" content="WordPress Development, Elementor Pro & WooCommerce Expert.">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bandhudhan Misra",
+  "jobTitle": "WordPress Developer",
+  "knowsAbout": ["WordPress", "Elementor Pro", "WooCommerce", "Website Speed Optimization"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== Glittering green border — Landing Page & WooCommerce Store cards ===== */
+@property --price-border-angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.price-card.highlight-border,
+.portfolio-grid .p-card{
+  position: relative;
+  border: 1px solid #00E676;
+  z-index: 0;
+  animation: priceBorderPulse 2.4s ease-in-out infinite;
+}
+.price-card.highlight-border::before,
+.portfolio-grid .p-card::before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--price-border-angle),
+    transparent 0deg,
+    rgba(0,230,118,0) 0deg,
+    #00E676 8deg,
+    #eafff2 16deg,
+    #00E676 24deg,
+    transparent 55deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: priceBorderSpin 2.6s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.price-card.highlight-border::after,
+.portfolio-grid .p-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(0,230,118,.55);
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes priceBorderSpin{
+  to{ --price-border-angle: 360deg; }
+}
+@keyframes priceBorderPulse{
+  0%, 100%{
+    box-shadow: 0 0 6px rgba(0,230,118,.35), 0 0 14px rgba(0,230,118,.12);
+  }
+  50%{
+    box-shadow: 0 0 16px rgba(0,230,118,.75), 0 0 34px rgba(0,230,118,.35);
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .price-card.highlight-border,
+  .price-card.highlight-border::before,
+  .portfolio-grid .p-card,
+  .portfolio-grid .p-card::before{
+    animation: none;
+  }
+  .price-card.highlight-border,
+  .portfolio-grid .p-card{
+    box-shadow: 0 0 10px rgba(0,230,118,.4);
+  }
+}
+
+/* ===== Hero section — balanced, professional spacing ===== */
+section#home{
+  padding-top: clamp(96px, 11vw, 148px) !important;
+  padding-bottom: clamp(96px, 11vw, 148px) !important;
+  min-height: unset !important;
+}
+
+/* ===== Glittering white border — second photo (Experience / play button) ===== */
+@property --photo-border-angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.exp-media.highlight-border-white,
+.blog-grid .blog-card{
+  position: relative;
+  border: 1px solid #ffffff;
+  z-index: 0;
+  animation: photoBorderPulse 2.4s ease-in-out infinite;
+}
+.exp-media.highlight-border-white::before,
+.blog-grid .blog-card::before{
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--photo-border-angle),
+    transparent 0deg,
+    rgba(255,255,255,0) 0deg,
+    #ffffff 8deg,
+    #ffffff 16deg,
+    #ffffff 24deg,
+    transparent 55deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: photoBorderSpin 2.6s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.exp-media.highlight-border-white::after,
+.blog-grid .blog-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.6);
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes photoBorderSpin{
+  to{ --photo-border-angle: 360deg; }
+}
+@keyframes photoBorderPulse{
+  0%, 100%{
+    box-shadow: 0 0 6px rgba(255,255,255,.35), 0 0 14px rgba(255,255,255,.12);
+  }
+  50%{
+    box-shadow: 0 0 16px rgba(255,255,255,.75), 0 0 34px rgba(255,255,255,.35);
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .exp-media.highlight-border-white,
+  .exp-media.highlight-border-white::before,
+  .blog-grid .blog-card,
+  .blog-grid .blog-card::before{
+    animation: none;
+  }
+  .exp-media.highlight-border-white,
+  .blog-grid .blog-card{
+    box-shadow: 0 0 10px rgba(255,255,255,.4);
+  }
+}
+
+/* ===== Contact section — 1px borders, white for Name/Email/Phone/Subject ===== */
+.contact-form .field input,
+.contact-form .field textarea,
+.contact-info .info-card{
+  border-width: 1px !important;
+}
+.contact-form .field input{
+  border-color: #00E676 !important;
+}
+
+/* ===== Contact section — all text white ===== */
+#contact .section-head .eyebrow,
+#contact .section-head h2,
+#contact .section-head h2 span,
+#contact .section-head p,
+#contact .contact-form label,
+#contact .contact-info .info-card b,
+#contact .contact-info .info-card span,
+#contact .contact-info .info-card a.info-link{
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+#contact .contact-form input,
+#contact .contact-form textarea{
+  color: #ffffff !important;
+}
+#contact .contact-form input::placeholder,
+#contact .contact-form textarea::placeholder{
+  color: var(--muted, #b5b5b5) !important;
+  -webkit-text-fill-color: var(--muted, #b5b5b5) !important;
+  opacity: 1 !important;
+}
+
+/* ===== Contact section — shrink Email/Phone/WhatsApp/Location boxes above the map ===== */
+.contact-info .info-card{
+  padding: 10px 14px !important;
+  gap: 10px !important;
+  margin-bottom: 8px !important;
+  min-height: 0 !important;
+}
+.contact-info .info-card i{
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+.contact-info .info-card b{
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  margin: 0 0 2px !important;
+  display: block;
+}
+.contact-info .info-card span,
+.contact-info .info-card a.info-link{
+  font-size: 12.5px !important;
+  line-height: 1.2 !important;
+}
+
+/* ===== Mobile menu — particle effect backdrop ===== */
+.mobile-menu.open::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, rgba(0,230,118,.14), transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+.mobile-menu .mm-particles{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.mobile-menu > ul{
+  position: relative;
+  z-index: 1;
+}
+.mobile-menu.open{
+  background: rgba(9,9,9,.72) !important;
+  backdrop-filter: blur(22px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
+}
+
+/* ===== Mobile menu — smaller, more transparent panel (mobile only) ===== */
+@media (max-width: 992px){
+  .mobile-menu.open{
+    position: fixed !important;
+    background: rgba(9,9,9,.32) !important;
+    backdrop-filter: blur(14px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(150%) !important;
+    width: min(72vw, 280px) !important;
+    max-width: 280px !important;
+    max-height: 60vh !important;
+    left: auto !important;
+    right: 14px !important;
+    top: 70px !important;
+    bottom: auto !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255,255,255,.1) !important;
+    box-shadow: 0 12px 40px rgba(0,0,0,.45) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .mobile-menu:not(.open){
+    max-height: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .mobile-menu.open ul{
+    padding: 4px 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+  .mobile-menu.open ul li{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .mobile-menu.open ul li a{
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* ===== Sticky glass header (desktop + mobile) ===== */
+#site-header{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+  background: rgba(9,9,9,.55) !important;
+  backdrop-filter: blur(18px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: 0 4px 30px rgba(0,0,0,.25) !important;
+  transition: background .3s ease, box-shadow .3s ease;
+}
+
+/* ===== Desktop nav — refined hover state ===== */
+@media (min-width: 993px){
+  .nav-links a{
+    position: relative;
+    padding-bottom: 6px;
+    transition: color .25s ease;
+  }
+  .nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00E676, #19D3A2);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a.active{
+    color: #00E676 !important;
+  }
+  .nav-links a:hover::after,
+  .nav-links a.active::after{
+    transform: scaleX(1);
+  }
+}
+
+/* ===== Hero buttons — proper stacked layout on mobile only ===== */
+@media (max-width: 600px){
+  .hero-btns{
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 14px !important;
+  }
+  .hero-btns .btn{
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- SVG gradient defs (used by skill rings) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E676"/>
+      <stop offset="100%" stop-color="#19D3A2"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div id="loader"><div class="loader-mark">BANDHUDHAN&nbsp;MISRA</div></div>
+<div id="scroll-progress"></div>
+<div id="cursor-glow"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header">
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">
+        <span class="logo-mark">BM</span>
+        <span class="logo-text"><b>Bandhudhan Misra</b><span>WordPress Developer</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="nav-icon-btn" id="searchToggle" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Hire Me</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <canvas id="mmParticles" class="mm-particles" aria-hidden="true"></canvas>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Service</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="home">
+  <div class="hero-bg"><span class="blob blob-1"></span><span class="blob blob-2"></span></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hi" data-reveal="left" style="transition-delay:.05s"><span class="dot"></span> Hello, I'm</div>
+        <h1 data-reveal="left" style="transition-delay:.16s">Bandhudhan<br><span class="grad">Misra</span></h1>
+        <div class="type-row" data-reveal="left" style="transition-delay:.27s"><span class="bracket">&lt;</span><span id="typed"></span><span class="type-cursor"></span><span class="bracket">/&gt;</span></div>
+        <p class="lead" data-reveal="left" style="transition-delay:.38s">I design and build fast, pixel-perfect WordPress websites — from Elementor Pro landing pages to full WooCommerce stores — engineered to load quickly, rank well, and turn visitors into clients.</p>
+        <div class="hero-btns" data-reveal="left" style="transition-delay:.49s">
+          <a href="#contact" class="btn btn-primary magnetic">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#portfolio" class="btn btn-outline magnetic">View Portfolio</a>
+        </div>
+        <div class="hero-meta" data-reveal="left" style="transition-delay:.6s">
+          <div><b data-count="5">0</b><span>Years Experience</span></div>
+          <div><b data-count="120">0</b><span>Projects Done</span></div>
+          <div><b data-count="95">0</b><span>Happy Clients</span></div>
+          <div><b data-count="98">0</b><span>Avg Speed Score</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orbit-stage" data-reveal="right" style="transition-delay:.2s">
+          <div class="orbit-path orbit-path-1"><div class="orbit-spin"><span class="orbit-particle orbit-particle-1"></span></div></div>
+          <div class="orbit-path orbit-path-2"><div class="orbit-spin"><span class="orbit-particle orbit-particle-2"></span></div></div>
+          <div class="orbit-path orbit-path-3"><div class="orbit-spin"><span class="orbit-particle orbit-particle-3"></span></div></div>
+          <div class="orbit-path orbit-path-4"><div class="orbit-spin"><span class="orbit-particle orbit-particle-4"></span></div></div>
+          <div class="orbit-path orbit-path-5"><div class="orbit-spin"><span class="orbit-particle orbit-particle-5"></span></div></div>
+          <div class="orbit-path orbit-path-6"><div class="orbit-spin"><span class="orbit-particle orbit-particle-6"></span></div></div>
+          <div class="hero-photo-wrap">
+            <img src="bandhudhan-photo.png" alt="Bandhudhan Misra, WordPress Developer">
+          </div>
+        </div>
+        <div class="float-card fc-1"><i class="fa-brands fa-wordpress"></i> WordPress Expert</div>
+        <div class="float-card fc-2"><i class="fa-solid fa-cart-shopping"></i> Woo-commerce Expert</div>
+        <div class="float-card fc-3"><i class="fa-brands fa-elementor"></i> Elementor Pro</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="about-copy about-copy-full" data-reveal="top">
+      <span class="eyebrow">About Me</span>
+      <h3>Turning ideas into <span>fast, reliable</span> WordPress websites</h3>
+      <p>I'm a WordPress developer specializing in Elementor Pro and WooCommerce. Over the past five years I've helped small businesses, agencies and solo founders launch websites that don't just look premium — they load fast, rank on Google, and are simple to manage long after I hand over the keys.</p>
+      <p>My process blends clean, semantic code with AI-assisted workflows to move faster without cutting corners on performance, accessibility or security. Whether it's a landing page, a full storefront or a stubborn bug at 2am, I treat every project like it's my own business on the line.</p>
+      <div class="stat-grid stat-grid-row">
+        <div class="stat-card"><div class="num"><span data-count="5">0</span>+</div><div class="label">Years Experience</div></div>
+        <div class="stat-card"><div class="num"><span data-count="120">0</span>+</div><div class="label">Projects Completed</div></div>
+        <div class="stat-card"><div class="num"><span data-count="95">0</span>+</div><div class="label">Happy Clients</div></div>
+        <div class="stat-card"><div class="num"><span data-count="140">0</span>+</div><div class="label">Websites Delivered</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING / PACKAGES ============ -->
+<section id="pricing" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Specifications</span><h2>Website <span>Packages</span></h2></div>
+      <p>Straightforward, project-based pricing — pick the scope that matches what you need.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card highlight-border" data-reveal="left">
+        <div class="price-visual"><img src="mockup-landing.jpg" alt="Landing page website preview"></div>
+        <h4>Landing Page</h4>
+        <span class="price-sub">Best For Launches</span>
+        <div class="price-amount">₹8,999<span>/ Project</span></div>
+        <ul class="price-list">
+          <li><i class="fa-solid fa-check"></i> Single high-converting page</li>
+          <li><i class="fa-solid fa-check"></i> Elementor Pro build</li>
+          <li><i class="fa-solid fa-check"></i> Mobile optimized</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Get Started</a>
+      </div>
+
+      <div class="price-card featured" data-reveal>
+        <span class="price-tag">Most Popular</span>
+        <div class="price-visual"><img src="mockup-business.jpg" alt="Business website preview"></div>
+        <h4>Business Website</h4>
+        <span class="price-sub">Best For Growing Brands</span>
+        <div class="price-amount">₹24,999<span>/ Project</span></div>
+        <ul class="price-list">
+          <li><i class="fa-solid fa-check"></i> Up to 8 pages</li>
+          <li><i class="fa-solid fa-check"></i> Custom design system</li>
+          <li><i class="fa-solid fa-check"></i> SEO &amp; speed optimized</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-sm magnetic">Get Started</a>
+      </div>
+
+      <div class="price-card highlight-border" data-reveal="right">
+        <div class="price-visual"><img src="mockup-ecommerce.jpg" alt="E-commerce website preview"></div>
+        <h4>WooCommerce Store</h4>
+        <span class="price-sub">Best For Retailers</span>
+        <div class="price-amount">₹49,999<span>/ Project</span></div>
+        <ul class="price-list">
+          <li><i class="fa-solid fa-check"></i> Full product catalog setup</li>
+          <li><i class="fa-solid fa-check"></i> Payment &amp; shipping config</li>
+          <li><i class="fa-solid fa-check"></i> Checkout optimization</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">My Experience</span><h2>Experience &amp; <span>Skill</span></h2></div>
+      <p>Core tools I rely on daily, and where each one sits on my confidence scale.</p>
+    </div>
+    <div class="skills-grid skills-grid-big">
+      <div class="skill-item skill-item-big" data-reveal="left" data-pct="96" data-name="WordPress"></div>
+      <div class="skill-item skill-item-big" data-reveal="top" data-pct="94" data-name="Elementor Pro"></div>
+      <div class="skill-item skill-item-big" data-reveal="top" data-pct="90" data-name="WooCommerce"></div>
+      <div class="skill-item skill-item-big" data-reveal="right" data-pct="88" data-name="SEO"></div>
+    </div>
+    <div class="skill-tags" data-reveal="top">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Speed Optimization</span><span>Responsive Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">What We Do</span><h2>Services &amp; <span>Solutions</span></h2></div>
+      <p>End-to-end WordPress services, from a single landing page to a full-scale online store.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card highlight-border" data-reveal="left">
+        <div class="price-icon"><i class="fa-brands fa-wordpress"></i></div>
+        <h4>WordPress Development</h4>
+        <span class="price-sub">Custom Builds</span>
+        <p class="price-desc">Custom WordPress builds designed around your business, not a generic template.</p>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Learn More</a>
+      </div>
+      <div class="price-card featured" data-reveal>
+        <span class="price-tag">Signature</span>
+        <div class="price-icon"><i class="fa-brands fa-elementor"></i></div>
+        <h4>Elementor Pro Websites</h4>
+        <span class="price-sub">Pixel-Perfect Pages</span>
+        <p class="price-desc">Drag-and-drop friendly pages that stay pixel-perfect and easy to edit after launch.</p>
+        <a href="#contact" class="btn btn-primary btn-sm magnetic">Learn More</a>
+      </div>
+      <div class="price-card highlight-border" data-reveal="right">
+        <div class="price-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+        <h4>WooCommerce Stores</h4>
+        <span class="price-sub">Full Online Stores</span>
+        <p class="price-desc">Smooth checkout, product variations and payment gateways, set up right.</p>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Learn More</a>
+      </div>
+    </div>
+
+    <div class="service-tags-row" data-reveal>
+      <div class="service-tag"><i class="fa-solid fa-bullseye"></i> Landing Page Design</div>
+      <div class="service-tag"><i class="fa-solid fa-briefcase"></i> Business Websites</div>
+      <div class="service-tag"><i class="fa-solid fa-image"></i> Portfolio Websites</div>
+      <div class="service-tag"><i class="fa-solid fa-pen-nib"></i> Blog Websites</div>
+      <div class="service-tag"><i class="fa-solid fa-arrows-rotate"></i> Redesign &amp; Migration</div>
+      <div class="service-tag"><i class="fa-solid fa-gauge-high"></i> Speed Optimization</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">My Experience</span><h2>Experience &amp; <span>Skill</span></h2></div>
+      <p>Five years of hands-on WordPress work, from freelance projects to consulting.</p>
+    </div>
+
+    <div class="exp-columns">
+      <div class="exp-col" data-reveal="left">
+        <span class="exp-year">2024 – Present</span>
+        <b class="exp-role">WordPress Consultant &amp; AI Automation Expert</b>
+        <p>Advising agencies on architecture, performance and AI-assisted WordPress workflows and automations.</p>
+      </div>
+      <div class="exp-col" data-reveal>
+        <span class="exp-year">2022 – 2024</span>
+        <b class="exp-role">Freelance Web Developer</b>
+        <p>Delivered 80+ WordPress and WooCommerce projects across retail and education.</p>
+      </div>
+      <div class="exp-col" data-reveal="right">
+        <span class="exp-year">2021 – 2022</span>
+        <b class="exp-role">WooCommerce Specialist</b>
+        <p>Built and optimized stores, focused on checkout flow and payment integrations.</p>
+      </div>
+      <div class="exp-col" data-reveal="top">
+        <span class="exp-year">2019 – 2021</span>
+        <b class="exp-role">Elementor Expert</b>
+        <p>Built custom widgets and reusable Elementor Pro design systems for agencies.</p>
+      </div>
+    </div>
+
+    <div class="exp-media-row">
+      <div class="exp-media-stage" data-reveal="right">
+        <div class="exp-media highlight-border-white">
+          <img src="ai-automation-photo.png" alt="Bandhudhan Misra working with AI automation tools">
+        </div>
+        <div class="orbit-path orbit-path-a1"><div class="orbit-spin"><span class="orbit-particle orbit-particle-a1"></span></div></div>
+        <div class="orbit-path orbit-path-a2"><div class="orbit-spin"><span class="orbit-particle orbit-particle-a2"></span></div></div>
+        <div class="orbit-path orbit-path-a3"><div class="orbit-spin"><span class="orbit-particle orbit-particle-a3"></span></div></div>
+        <div class="orbit-path orbit-path-a4"><div class="orbit-spin"><span class="orbit-particle orbit-particle-a4"></span></div></div>
+        <div class="orbit-path orbit-path-a5"><div class="orbit-spin"><span class="orbit-particle orbit-particle-a5"></span></div></div>
+        <div class="orbit-path orbit-path-a6"><div class="orbit-spin"><span class="orbit-particle orbit-particle-a6"></span></div></div>
+        <button class="play-btn" id="playIntroVideo" aria-label="Play intro video"><i class="fa-solid fa-play"></i></button>
+      </div>
+      <div class="exp-media-copy" data-reveal="left">
+        <span class="eyebrow">A Little More About Me</span>
+        <h3>Focused on <span>performance</span> and long-term maintainability</h3>
+        <p>Spend more time focusing on the important parts of your business. I handle the WordPress side — from first build to ongoing speed and security — so your site stays fast and dependable as it grows.</p>
+        <a href="Bandhudhan-Misra-CV.pdf" download="Bandhudhan-Misra-CV.pdf" class="btn btn-primary magnetic">Download CV <i class="fa-solid fa-download"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="portfolio" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Working Process</span><h2>Latest Working <span>Project</span></h2></div>
+      <div class="carousel-arrows">
+        <button id="projPrev" class="arrow-btn" aria-label="Previous projects"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="projNext" class="arrow-btn" aria-label="Next projects"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- cards injected by JS from data array -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Testimonials</span><h2>Happy Clients <span>To Says</span></h2></div>
+      <div class="carousel-arrows">
+        <button id="testiPrev" class="arrow-btn" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="testiNext" class="arrow-btn" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="testi-wrap" data-reveal>
+      <i class="fa-solid fa-quote-left testi-quote-icon"></i>
+      <div class="testi-slide-container" id="testiContainer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAINTENANCE PLANS (second pricing-style block, matches demo repeat) ============ -->
+<section id="maintenance" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Ongoing Support</span><h2>Maintenance &amp; <span>Support Plans</span></h2></div>
+      <p>Keep your site fast, secure, and up to date after launch with a monthly plan.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card highlight-border" data-reveal="left">
+        <div class="price-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h4>Basic Care</h4>
+        <span class="price-sub">Best For Small Sites</span>
+        <div class="price-amount">₹1,499<span>/ Month</span></div>
+        <ul class="price-list">
+          <li><i class="fa-solid fa-check"></i> Core &amp; plugin updates</li>
+          <li><i class="fa-solid fa-check"></i> Weekly backups</li>
+          <li><i class="fa-solid fa-check"></i> Uptime monitoring</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Read More</a>
+      </div>
+
+      <div class="price-card featured" data-reveal>
+        <span class="price-tag">Best Value</span>
+        <div class="price-icon"><i class="fa-solid fa-gauge-high"></i></div>
+        <h4>Growth Care</h4>
+        <span class="price-sub">Best For Business Sites</span>
+        <div class="price-amount">₹2,999<span>/ Month</span></div>
+        <ul class="price-list">
+          <li><i class="fa-solid fa-check"></i> Everything in Basic Care</li>
+          <li><i class="fa-solid fa-check"></i> Speed optimization checks</li>
+          <li><i class="fa-solid fa-check"></i> 60 minutes of edits monthly</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-sm magnetic">Read More</a>
+      </div>
+
+      <div class="price-card highlight-border" data-reveal="right">
+        <div class="price-icon"><i class="fa-solid fa-headset"></i></div>
+        <h4>Store Care</h4>
+        <span class="price-sub">Best For WooCommerce</span>
+        <div class="price-amount">₹4,999<span>/ Month</span></div>
+        <ul class="price-list">
+          <li><i class="fa-solid fa-check"></i> Everything in Growth Care</li>
+          <li><i class="fa-solid fa-check"></i> Product &amp; order support</li>
+          <li><i class="fa-solid fa-check"></i> Priority response time</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-sm magnetic">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG / NEWS ============ -->
+<section id="blog" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Recent News Desk</span><h2>Latest News &amp; <span>Blogs</span></h2></div>
+      <p>Short, practical notes on WordPress, Elementor and running a fast website.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card" data-reveal="left">
+        <div class="blog-media">
+          <div class="blog-shimmer"></div>
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="gBlog1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00E676" stop-opacity=".22"/><stop offset="100%" stop-color="#19D3A2" stop-opacity=".04"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#gBlog1)"/>
+            <circle cx="200" cy="125" r="70" fill="none" stroke="#00E676" stroke-opacity=".25" stroke-width="10"/>
+            <circle class="blog-pulse-ring" cx="200" cy="125" r="70" fill="none" stroke="#00E676" stroke-width="2"/>
+            <g class="blog-needle" style="transform-origin: 200px 125px;">
+              <path d="M200 125 L200 68" stroke="#00E676" stroke-width="6" stroke-linecap="round"/>
+            </g>
+            <circle cx="200" cy="125" r="7" fill="#00E676"/>
+            <path d="M150 84a2 2 0 100-4 2 2 0 000 4z" fill="#19D3A2"/>
+            <g stroke="#19D3A2" stroke-width="4" fill="none" stroke-linecap="round"><path d="M256 100l10-10M256 150l10 10M144 100l-10-10M144 150l-10 10"/></g>
+          </svg>
+        </div>
+        <div class="blog-body">
+          <span class="blog-date">June 18, 2026</span>
+          <h4>5 Reasons Your WordPress Site Loads Slowly</h4>
+          <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal>
+        <div class="blog-media eb-stage">
+          <div class="blog-shimmer"></div>
+          <div class="eb-panel">
+            <span class="eb-dot"></span><span class="eb-dot"></span><span class="eb-dot"></span>
+            <div class="eb-row eb-row-1"></div>
+            <div class="eb-row eb-row-2"></div>
+            <div class="eb-row eb-row-3"></div>
+            <div class="eb-row eb-row-4"></div>
+          </div>
+          <i class="fa-brands fa-elementor eb-icon"></i>
+        </div>
+        <div class="blog-body">
+          <span class="blog-date">May 27, 2026</span>
+          <h4>Getting the Most Out of Elementor Pro</h4>
+          <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-reveal="right">
+        <div class="blog-media wc-stage">
+          <div class="blog-shimmer"></div>
+          <i class="fa-solid fa-tag wc-float wc-float-tag"></i>
+          <i class="fa-solid fa-box wc-float wc-float-box"></i>
+          <i class="fa-solid fa-truck-fast wc-float wc-float-truck"></i>
+          <i class="fa-solid fa-receipt wc-float wc-float-receipt"></i>
+          <div class="wc-track"></div>
+          <div class="wc-track-fill"></div>
+          <i class="fa-solid fa-cart-shopping wc-cart-icon"></i>
+          <div class="wc-burst wc-burst-1"></div>
+          <div class="wc-burst wc-burst-2"></div>
+          <div class="wc-badge">
+            <i class="fa-solid fa-credit-card wc-badge-icon"></i>
+            <i class="fa-solid fa-check wc-badge-check"></i>
+          </div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-date">May 9, 2026</span>
+          <h4>WooCommerce Checkout: What Kills Conversions</h4>
+          <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section id="newsletter" class="section-pad-sm">
+  <div class="container">
+    <div class="newsletter-bar" data-reveal="top">
+      <div>
+        <span class="eyebrow">Newsletter</span>
+        <h3>Stay Up To Date, Subscribe To The Free Newsletter!</h3>
+      </div>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Questions</span><h2>Frequently <span>Asked</span></h2></div>
+      <p>Answers to what clients usually ask before we start working together.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item" data-reveal="left" style="transition-delay:.02s">
+        <div class="faq-q"><h5>How long does a website take to build?</h5><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Most landing pages take 5–7 days, and full business or WooCommerce sites take 2–4 weeks depending on scope and content readiness.</div>
+      </div>
+      <div class="faq-item" data-reveal="right" style="transition-delay:.06s">
+        <div class="faq-q"><h5>How much does a website cost?</h5><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Pricing depends on the number of pages, features and whether it's a store or a business site. Message me with your requirements for an exact quote.</div>
+      </div>
+      <div class="faq-item" data-reveal="left" style="transition-delay:.1s">
+        <div class="faq-q"><h5>Do you offer post-launch support?</h5><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes — every project includes a free support window after launch, with ongoing maintenance plans available afterward.</div>
+      </div>
+      <div class="faq-item" data-reveal="right" style="transition-delay:.14s">
+        <div class="faq-q"><h5>Do you provide website maintenance?</h5><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes, I offer monthly maintenance covering updates, backups, security checks and small content changes.</div>
+      </div>
+      <div class="faq-item" data-reveal="left" style="transition-delay:.18s">
+        <div class="faq-q"><h5>Can you build a WooCommerce store from scratch?</h5><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Absolutely — from product setup and payment gateways to shipping rules and checkout optimization.</div>
+      </div>
+      <div class="faq-item" data-reveal="right" style="transition-delay:.22s">
+        <div class="faq-q"><h5>Do you work with Elementor Pro only?</h5><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Elementor Pro is my main tool, but I also build custom themes and can work within an existing page builder if you prefer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal="top">
+      <div><span class="eyebrow">Get In Touch</span><h2>Let's Start a <span>Project</span></h2></div>
+      <p>Have a project in mind? Send a message and I'll reply within a day.</p>
+    </div>
+    <div class="contact-grid">
+      <form id="contactForm" class="contact-form" data-reveal="left">
+        <div class="form-row">
+          <div class="field"><label>Name</label><input type="text" name="name" placeholder="Your full name" required></div>
+          <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="+91 00000 00000"></div>
+          <div class="field"><label>Subject</label><input type="text" name="subject" placeholder="Project type"></div>
+        </div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
+        <p id="contactFormStatus" style="min-height:1.2em;margin:0;font-size:.9rem;"></p>
+        <button type="submit" class="btn btn-primary magnetic" style="align-self:flex-start;">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+
+      <div class="contact-info" data-reveal="right">
+        <div class="info-card"><i class="fa-solid fa-envelope"></i><div><b>Email</b><span>bandhudhan.misra@gmail.com</span></div></div>
+        <div class="info-card"><i class="fa-solid fa-phone"></i><div><b>Phone</b><a href="tel:+919679112559" class="info-link">+91 96791 12559</a></div></div>
+        <div class="info-card"><i class="fa-brands fa-whatsapp"></i><div><b>WhatsApp</b><a href="https://wa.me/919679112559" target="_blank" rel="noopener" class="info-link">+91 96791 12559</a></div></div>
+        <div class="info-card"><i class="fa-solid fa-location-dot"></i><div><b>Location</b><span>Asansol, West Bengal - 713325, India</span></div></div>
+        <div class="map-box">
+          <iframe
+            src="https://maps.google.com/maps?q=Asansol,+West+Bengal+713325,+India&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Location map — Asansol, West Bengal 713325, India">
+          </iframe>
+        </div>
+        <div class="social-row">
+          <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-glow"></div>
+  <div class="container">
+
+    <!-- CTA banner -->
+    <div class="footer-cta" data-reveal="top">
+      <div>
+        <span class="eyebrow">Let's Work Together</span>
+        <h3>Have a project in mind?<br>Let's build something <span>great</span>.</h3>
+      </div>
+      <a href="#contact" class="btn btn-primary magnetic">Say Hello <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- main grid -->
+    <div class="footer-main">
+      <div class="footer-brand-col">
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-mark">BM</span>
+          <span class="logo-text"><b>Bandhudhan Misra</b><span>WordPress Developer</span></span>
+        </a>
+        <p>Building fast, pixel-perfect WordPress websites — from Elementor Pro landing pages to full WooCommerce stores — for clients around the world.</p>
+        <div class="social-row">
+          <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Quick Links</h6>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#blog">Blog</a>
+      </div>
+
+      <div class="footer-col">
+        <h6>Services</h6>
+        <a href="#services">WordPress Development</a>
+        <a href="#services">Elementor Pro Websites</a>
+        <a href="#services">WooCommerce Stores</a>
+        <a href="#maintenance">Maintenance Plans</a>
+        <a href="#contact">Speed Optimization</a>
+      </div>
+
+      <div class="footer-col footer-contact-col">
+        <h6>Get In Touch</h6>
+        <a href="mailto:bandhudhan.misra@gmail.com"><i class="fa-solid fa-envelope"></i> bandhudhan.misra@gmail.com</a>
+        <a href="tel:+919679112559"><i class="fa-solid fa-phone"></i> +91 96791 12559</a>
+        <a href="https://wa.me/919679112559" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+        <a href="#contact"><i class="fa-solid fa-location-dot"></i> Asansol, West Bengal - 713325, India</a>
+      </div>
+    </div>
+
+    <!-- trust badges -->
+    <div class="footer-badges" data-reveal>
+      <div class="fbadge"><i class="fa-brands fa-wordpress"></i><span>WordPress</span></div>
+      <div class="fbadge"><i class="fa-brands fa-elementor"></i><span>Elementor Pro</span></div>
+      <div class="fbadge"><i class="fa-brands fa-square-js"></i><span>WooCommerce</span></div>
+      <div class="fbadge"><i class="fa-brands fa-php"></i><span>PHP</span></div>
+      <div class="fbadge"><i class="fa-solid fa-gauge-high"></i><span>Speed First</span></div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Bandhudhan Misra. All rights reserved.</span>
+      <span class="footer-credit">Designed &amp; built with WordPress expertise.</span>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ============ VIDEO MODAL ============ -->
+<div id="videoModal" class="video-modal">
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+  <div class="video-modal-inner">
+    <button class="video-modal-close" id="videoModalClose" aria-label="Close video"><i class="fa-solid fa-xmark"></i></button>
+    <video id="introVideo" controls playsinline>
+      <source src="intro-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+<script src="script.js"></script>
+
+<!-- ============ SUPABASE CONTACT FORM ============ -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+  const SUPABASE_URL = 'https://decrfowkriqiqrvscxti.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_4pS4oPkNu8hrL9izXAI5kQ_3yakAEUt';
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('contactFormStatus');
+
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnHTML = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
+      statusEl.textContent = '';
+      statusEl.style.color = '';
+
+      const formData = new FormData(form);
+      const payload = {
+        name: (formData.get('name') || '').toString().trim(),
+        email: (formData.get('email') || '').toString().trim(),
+        phone: (formData.get('phone') || '').toString().trim() || null,
+        subject: (formData.get('subject') || '').toString().trim() || null,
+        message: (formData.get('message') || '').toString().trim()
+      };
+
+      const { error } = await supabase.from('contact_submissions').insert([payload]);
+
+      if (error) {
+        statusEl.style.color = '#ff6b6b';
+        statusEl.textContent = 'Something went wrong. Please try again or email me directly.';
+        console.error('Supabase insert error:', error);
+      } else {
+        statusEl.style.color = '#00E676';
+        statusEl.textContent = "Thanks! Your message has been sent — I'll reply within a day.";
+        form.reset();
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    });
+  }
+</script>
+<script>
+(function(){
+  const menu = document.getElementById('mobileMenu');
+  const canvas = document.getElementById('mmParticles');
+  if(!menu || !canvas || !canvas.getContext) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let raf = null;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    canvas.width = menu.offsetWidth;
+    canvas.height = menu.offsetHeight;
+  }
+
+  function makeParticles(){
+    const area = canvas.width * canvas.height;
+    const count = Math.max(30, Math.min(90, Math.floor(area / 4500)));
+    particles = Array.from({ length: count }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 1.7 + 0.7,
+      green: Math.random() > 0.4,
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.03 + Math.random() * 0.05
+    }));
+  }
+
+  function step(time){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for(let i = 0; i < particles.length; i++){
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      if(p.x <= 0 || p.x >= canvas.width) p.vx *= -1;
+      if(p.y <= 0 || p.y >= canvas.height) p.vy *= -1;
+
+      for(let j = i + 1; j < particles.length; j++){
+        const q = particles[j];
+        const dx = p.x - q.x, dy = p.y - q.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if(dist < 95){
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = 'rgba(0,230,118,' + (0.2 * (1 - dist / 95)) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    for(let i = 0; i < particles.length; i++){
+      const p = particles[i];
+      const twinkle = 0.55 + 0.45 * Math.sin((time || 0) * p.speed + p.phase);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * (0.85 + twinkle * 0.3), 0, Math.PI * 2);
+      ctx.fillStyle = p.green
+        ? 'rgba(0,230,118,' + (0.55 + twinkle * 0.45) + ')'
+        : 'rgba(255,255,255,' + (0.45 + twinkle * 0.45) + ')';
+      ctx.shadowColor = p.green ? 'rgba(0,230,118,0.9)' : 'rgba(255,255,255,0.7)';
+      ctx.shadowBlur = 5 + twinkle * 3;
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+
+    raf = requestAnimationFrame(step);
+  }
+
+  function start(){
+    if(reduceMotion || raf) return;
+    resize();
+    makeParticles();
+    raf = requestAnimationFrame(step);
+  }
+
+  function stop(){
+    if(raf){
+      cancelAnimationFrame(raf);
+      raf = null;
+    }
+    if(ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  const observer = new MutationObserver(function(){
+    if(menu.classList.contains('open')) start();
+    else stop();
+  });
+  observer.observe(menu, { attributes: true, attributeFilter: ['class'] });
+
+  let resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      if(menu.classList.contains('open')){
+        resize();
+        makeParticles();
+      }
+    }, 150);
+  });
+
+  if(menu.classList.contains('open')) start();
+})();
+</script>
+</body>
+</html>
