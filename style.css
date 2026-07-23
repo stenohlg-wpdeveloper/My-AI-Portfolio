@@ -458,49 +458,66 @@ nav{
 .orbit-path-1{
   --r: 130px; --dur: 14s; --dir: normal;
   --size: 16px; --pulse-dur: 2.8s; --pulse-delay: 0s;
-  --color: var(--primary); --glow1: rgba(0,230,118,.75); --glow2: rgba(0,230,118,.35);
+  --color: #16161a; --glow1: rgba(40,40,45,.75); --glow2: rgba(40,40,45,.35);
   width: calc(var(--r) * 2); height: calc(var(--r) * 2);
   margin-left: calc(var(--r) * -1); margin-top: calc(var(--r) * -1);
 }
 .orbit-path-2{
   --r: 152px; --dur: 20s; --dir: reverse;
   --size: 13px; --pulse-dur: 3.2s; --pulse-delay: .35s;
-  --color: #ffffff; --glow1: rgba(255,255,255,.7); --glow2: rgba(255,255,255,.3);
+  --color: #00E676; --glow1: rgba(0,230,118,.7); --glow2: rgba(0,230,118,.3);
   width: calc(var(--r) * 2); height: calc(var(--r) * 2);
   margin-left: calc(var(--r) * -1); margin-top: calc(var(--r) * -1);
 }
 .orbit-path-3{
   --r: 174px; --dur: 26s; --dir: normal;
   --size: 18px; --pulse-dur: 3.8s; --pulse-delay: .7s;
-  --color: var(--primary); --glow1: rgba(0,230,118,.7); --glow2: rgba(0,230,118,.32);
+  --color: #FF1744; --glow1: rgba(255,23,68,.7); --glow2: rgba(255,23,68,.32);
   width: calc(var(--r) * 2); height: calc(var(--r) * 2);
   margin-left: calc(var(--r) * -1); margin-top: calc(var(--r) * -1);
 }
 .orbit-path-4{
   --r: 196px; --dur: 18s; --dir: reverse;
   --size: 12px; --pulse-dur: 2.5s; --pulse-delay: 1.1s;
-  --color: #ffffff; --glow1: rgba(255,255,255,.65); --glow2: rgba(255,255,255,.28);
+  --color: #FFEB3B; --glow1: rgba(255,235,59,.65); --glow2: rgba(255,235,59,.28);
   width: calc(var(--r) * 2); height: calc(var(--r) * 2);
   margin-left: calc(var(--r) * -1); margin-top: calc(var(--r) * -1);
 }
 .orbit-path-5{
   --r: 206px; --dur: 32s; --dir: normal;
   --size: 15px; --pulse-dur: 4.4s; --pulse-delay: 1.5s;
-  --color: var(--secondary); --glow1: rgba(25,211,162,.7); --glow2: rgba(25,211,162,.3);
+  --color: #16161a; --glow1: rgba(40,40,45,.7); --glow2: rgba(40,40,45,.3);
   width: calc(var(--r) * 2); height: calc(var(--r) * 2);
   margin-left: calc(var(--r) * -1); margin-top: calc(var(--r) * -1);
 }
 .orbit-path-6{
   --r: 218px; --dur: 23s; --dir: reverse;
   --size: 11px; --pulse-dur: 3s; --pulse-delay: 1.9s;
-  --color: #ffffff; --glow1: rgba(255,255,255,.6); --glow2: rgba(255,255,255,.25);
+  --color: #FF1744; --glow1: rgba(255,23,68,.6); --glow2: rgba(255,23,68,.25);
   width: calc(var(--r) * 2); height: calc(var(--r) * 2);
   margin-left: calc(var(--r) * -1); margin-top: calc(var(--r) * -1);
+}
+
+/* Glitter/sparkle overlay for the hero orbit particles only */
+.orbit-stage .orbit-particle::after{
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.4) 30%, transparent 65%);
+  mix-blend-mode: screen;
+  animation: orbitGlitter 1.1s ease-in-out infinite;
+  animation-delay: inherit;
+}
+@keyframes orbitGlitter{
+  0%, 100%{ opacity: .25; transform: scale(.8) rotate(0deg); }
+  50%{ opacity: 1; transform: scale(1.3) rotate(45deg); }
 }
 
 @media (prefers-reduced-motion: reduce){
   .orbit-spin{ animation: none; }
   .orbit-particle{ animation: none; opacity: .8; }
+  .orbit-stage .orbit-particle::after{ animation: none; }
 }
 
 .float-card{
